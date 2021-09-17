@@ -11,7 +11,7 @@ Note: OpenCV, by default, uses 3 parameters for radial disotrtion and 2 paramete
    
 2. Save as the `camera_parameters` as a struct : 
     ```matlab
-    camera_parameters_struct = struct(d415)
+    camera_parameters_struct = struct(camera_parameters)
     ```
 3. Clone this repository to the folder where the `.mat` file is saved to
     ```
@@ -19,7 +19,7 @@ Note: OpenCV, by default, uses 3 parameters for radial disotrtion and 2 paramete
     ```
 4. Run the script with first argument as the name of the name of the `.mat` file, second argument for the name of the numpy file to be created.
     ```
-    python .\CalibrationParameters-Matlab2NumPy\mat2np.py <camera_parameters_struct.mat> <output.npz>
+    python .\CalibrationParameters-Matlab2NumPy\mat2np.py <camera_parameters_struct.mat> <name_of_output.npz>
     ```
 ## How to use the calibration data from `.npz` file?
 ```python
