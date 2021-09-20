@@ -17,9 +17,9 @@ def mat2np(path2mat, filename):
     radial_dist = struct['RadialDistortion'][0][0].squeeze()
     tangential_dist = struct['TangentialDistortion'][0][0].squeeze()
     
-    print("Intrinsic Parameters : ", mtx,
-        "\nRadial Distortion Parameter : ", radial_dist,
-        "\nTangential Distortion Parameters : ", tangential_dist)
+    print("Intrinsic Parameters =\n", mtx,
+        "\nRadial Distortion Parameter =\n", radial_dist,
+        "\nTangential Distortion Parameters =\n", tangential_dist)
     
     if radial_dist.shape[0] == 2 : dist = np.append(radial_dist,tangential_dist)
     elif radial_dist.shape[0] == 3 : dist = np.append(np.append(radial_dist[0:2],tangential_dist),radial_dist[2])
