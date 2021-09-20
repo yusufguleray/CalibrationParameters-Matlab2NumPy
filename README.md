@@ -25,6 +25,6 @@ Note: OpenCV, by default, uses 3 parameters for radial disotrtion and 2 paramete
 ```python
 import utils
 
-calib_file_name = "output.npz"
+calib_file_name = "output.npz"  # name of the .npz file that the camera parameters are saved in 
 calib_mtx, dist_coef = utils.getCalibData(calib_file_name)
 ```

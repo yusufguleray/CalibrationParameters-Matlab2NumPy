@@ -16,8 +16,14 @@ def mat2np(path2mat, filename):
     if not(np.all(mtx[2] != [0, 0, 1])) : mtx=mtx.T
     radial_dist = struct['RadialDistortion'][0][0].squeeze()
     tangential_dist = struct['TangentialDistortion'][0][0].squeeze()
+    
+    print("Intrinsic Parameters : ", mtx,
+        "\nRadial Distortion Parameter : ", radial_dist,
+        "\nTangential Distortion Parameters : ", tangential_dist)
+    
     if radial_dist.shape[0] == 2 : dist = np.append(radial_dist,tangential_dist)
     elif radial_dist.shape[0] == 3 : dist = np.append(np.append(radial_dist[0:2],tangential_dist),radial_dist[2])
+    
     print('Calibration matrix =\n', mtx, '\nDistortion Coefficients (OpenCV style) :\n', dist)
 
     np.savez_compressed(filename, mtx=mtx, dist=dist)
